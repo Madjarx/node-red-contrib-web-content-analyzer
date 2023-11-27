@@ -1,0 +1,38 @@
+{
+  "name": "node-red-contrib-web-content-analyzer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1"
+  },
+  "author": {
+    "name": "Aleksandar Bozic, Luka Radisavljevic",
+    "email": "salzah90@hotmail.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": "Node-RED nodes for web content analysis",
+  "keywords": ["node-red", "web", "content", "analysis"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/repository.git"
+  },
+  "bugs": {
+    "url": "https://github.com/username/repository/issues"
+  },
+  "homepage": "https://github.com/username/repository#readme",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "node-red": {
+    "nodes": {
+      "image-analyzer": "./nodes/image-analyzer.js",
+      "page-finder" : "./nodes/page-finder.js",
+      "text-analyzer": "./nodes/text-analyzer.js"
+    }
+  }
+}

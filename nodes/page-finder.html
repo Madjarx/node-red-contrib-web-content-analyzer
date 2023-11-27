@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('page-finder',{
+        category: 'web-content-analyzer',
+        color: '#009970',
+        defaults: {
+            name: {value:""},
+            url: {value:"", required: true},
+            urlType: {value: "str", required: true},
+            outputProperty: {value:"payload", required: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"page-finder";
+        },
+        oneditprepare: function() {
+            $("#node-input-url").typedInput({
+                default: 'str',
+                types: ["str", "msg", "flow", "global"],
+                typeField: $("#node-input-urlType")
+            });
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="page-finder">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name of the node">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-globe"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="URL to crawl" style="width: 70%;">
+        <input type="hidden" id="node-input-urlType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-outputProperty"><i class="icon-tag"></i> Output Property</label>
+        <input type="text" id="node-input-outputProperty" placeholder="Property to store the output in">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="page-finder">
+    <p>The Page Finder node is used to crawl a website and find all the pages. It uses a breadth-first search algorithm to visit all the pages on the website.</p>
+    <p>The node takes a URL as input, which can be a string, a message property, a flow context property, or a global context property. The URL is the starting point of the crawl.</p>
+    <p>The node outputs the URLs of the found pages. The output is stored in a specified property of the output message.</p>
+</script>

@@ -1,0 +1,60 @@
+<script type="text/javascript">
+    RED.nodes.registerType('image-analyzer',{
+        category: 'web-content-analyzer',
+        color: '#009970',
+        defaults: {
+            name: {value:""},
+            url: {value:"", required: true},
+            urlType: {value: "str", required: true},
+            keywords: {value:"", required: true},
+            showFound: {value: true},
+            showNotFound: {value: true}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"image-analyzer";
+        },
+        oneditprepare: function() {
+            $("#node-input-url").typedInput({
+                default: 'str',
+                types: ["str", "msg", "flow", "global"],
+                typeField: $("#node-input-urlType")
+            });
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="image-analyzer">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name of the node">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-globe"></i> URL</label>
+        <input type="text" id="node-input-url" placeholder="URL to analyze" style="width: 70%;">
+        <input type="hidden" id="node-input-urlType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-keywords"><i class="icon-search"></i> Keywords</label>
+        <input type="text" id="node-input-keywords" placeholder="Keywords to search for in images">
+        <p style="font-size: 0.8em; color: #888;">Example of keywords usage: "apple,banana,cherry". Split by a comma, without space.</p>
+    </div>
+    <div class="form-row">
+        <label for="node-input-showFound"><i class="icon-check"></i> Show when image is found</label>
+        <input type="checkbox" id="node-input-showFound" checked>
+    </div>
+    <div class="form-row">
+        <label for="node-input-showNotFound"><i class="icon-times"></i> Show when image is not found</label>
+        <input type="checkbox" id="node-input-showNotFound" checked>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="image-analyzer">
+    <p>The Image Analyzer node analyzes images on a webpage based on given keywords. It searches for the keywords in the alt text and file names of the images.</p>
+    <p>The node takes a URL as input, which can be a string, a message property, a flow context property, or a global context property. The URL is the webpage to analyze.</p>
+    <p>The node also takes a list of keywords as input. The keywords are the words to search for in the images.</p>
+    <p>The node has two checkboxes to control the output. If 'Show when image is found' is checked, the node will output a message when an image containing a keyword is found. If 'Show when image is not found' is checked, the node will output a message when an image containing a keyword is not found.</p>
+    <p>The output of the node is a message containing the URL of the image and the found or not found status.</p>
+</script>
