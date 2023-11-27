@@ -44,6 +44,7 @@ Filtering out logs in `text-analyzer` and `image-analyzer` doesn't work yet. Exp
 - [ ] Enhance logging
 - [ ] Improve dir structure and automate chores etc.
 - [ ] Improve docs & provide examples
+- [ ] Add better icons to the nodes, current ones are confusing
 
 # Usecase & Closing words
 

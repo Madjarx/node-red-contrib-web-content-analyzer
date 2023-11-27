@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-web-content-analyzer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -24,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "description": "Node-RED nodes for web content analysis",
-  "keywords": ["node-red", "web", "content", "analysis"],
+  "keywords": ["node-red", "web", "content", "analysis", "crawler", "scraper", "image", "text", "page"],
   "repository": {
     "type": "git",
     "url": "https://github.com/madjarx/node-red-contrib-web-content-analyzer.git"
@@ -37,6 +37,7 @@
     "node": ">=12.0.0"
   },
   "node-red": {
+    "version": ">=2.0.0",
     "nodes": {
       "image-analyzer": "./nodes/image-analyzer.js",
       "page-finder" : "./nodes/page-finder.js",
