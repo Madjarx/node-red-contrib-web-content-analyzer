@@ -45,6 +45,8 @@ Filtering out logs in `text-analyzer` and `image-analyzer` doesn't work yet. Exp
 - [ ] Improve dir structure and automate chores etc.
 - [ ] Improve docs & provide examples
 - [ ] Add better icons to the nodes, current ones are confusing
+- [ ] Decouple the logic from nodes itself, contain the logic in ts/js modules and use them within the nodes. This would allow the better containment & scalability of the project. 
+- [ ] CI/CD & tests, tests, tests... - luka gotta devops!
 
 # Usecase & Closing words
 
